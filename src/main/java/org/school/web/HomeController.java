@@ -13,4 +13,9 @@ public class HomeController {
     public String home() {
         return "index.html";
     }
+    
+    @RequestMapping(value = "enterquestion", method = RequestMethod.GET)
+    public String enterQuestion() {
+        return "enterquestion";
+    }
 }
