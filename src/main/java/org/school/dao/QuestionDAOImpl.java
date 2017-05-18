@@ -2,26 +2,39 @@ package org.school.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+import org.school.domain.ConnectDB;
 import org.school.domain.Question;
+import org.school.domain.QuestionMapper;
 
 public class QuestionDAOImpl implements QuestionDAO {
 
 	@Override
 	public void insertQuestion(Question question) {
-		// TODO Auto-generated method stub
+		SqlSession session = ConnectDB.getSqlSessionFactory().openSession();
+		QuestionMapper mapper = session.getMapper(QuestionMapper.class);
+		mapper.insertQuestion(question);
+		session.commit();
+		session.close();
 
 	}
 
 	@Override
 	public Question findById(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		SqlSession session = ConnectDB.getSqlSessionFactory().openSession();
+		QuestionMapper mapper = session.getMapper(QuestionMapper.class);
+		Question question = mapper.findByIdQuestion(id);
+		session.close();
+		return question;
 	}
 
 	@Override
 	public List<Question> getAllQuestion() {
-		// TODO Auto-generated method stub
-		return null;
+		SqlSession session = ConnectDB.getSqlSessionFactory().openSession();
+		QuestionMapper mapper = session.getMapper(QuestionMapper.class);
+		List<Question> question = mapper.getAllQuestion();
+		session.close();
+		return question;
 	}
 
 }

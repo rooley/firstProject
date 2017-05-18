@@ -14,7 +14,7 @@ public interface AnswerDAO {
 
 	public void insertAnswer(Answer answer);
 
-	public void setRate(double rate);
+	public void setRate(long id, double rate);
 
 	// public double getSumRate();
 

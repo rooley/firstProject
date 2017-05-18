@@ -26,7 +26,7 @@ public class ConnectDB {
 
 	}
 
-	public static SqlSessionFactory getsqlSessionFactory() {
+	public static SqlSessionFactory getSqlSessionFactory() {
 		return sqlSessionFactory;
 	}
 
