@@ -5,15 +5,18 @@ import org.school.dao.QuestionDAO;
 import org.school.domain.Answer;
 import org.school.domain.Question;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service("schoolService")
 public class SchoolServiceImpl implements SchoolService{
 	
 	@Autowired
+	@Qualifier("answerRespitory")
 	private AnswerDAO answerDAO;
 	
 	@Autowired
+	@Qualifier("questionRespitory")
 	private QuestionDAO questionDAO;
 	
 	@Override

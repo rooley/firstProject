@@ -2,6 +2,7 @@ package org.school.dao;
 
 import org.school.domain.Answer;
 
+@org.springframework.stereotype.Repository("answerRespitory")
 public class AnswerDAOImpl implements AnswerDAO{
 
 	@Override

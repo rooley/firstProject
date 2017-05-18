@@ -2,6 +2,7 @@ package org.school.dao;
 
 import org.school.domain.Question;
 
+@org.springframework.stereotype.Repository("questionRespitory")
 public class QuestionDAOImpl implements QuestionDAO {
 
 	@Override
