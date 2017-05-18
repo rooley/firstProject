@@ -22,6 +22,7 @@ public class ShcoolController {
     @RequestMapping(value = "/addQuestion", method = RequestMethod.POST)
     public String addQuestion(@RequestParam String message, @RequestParam String rate) {
     	
+
     	Question question = new Question();
     	question.setQuestion(message);
     	question.setMaxRate(Double.parseDouble(rate));
