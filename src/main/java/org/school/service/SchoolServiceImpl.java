@@ -9,19 +9,20 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service("schoolService")
-public class SchoolServiceImpl implements SchoolService{
-	
+public class SchoolServiceImpl implements SchoolService {
+
 	@Autowired
 	@Qualifier("answerRespitory")
 	private AnswerDAO answerDAO;
-	
+
 	@Autowired
 	@Qualifier("questionRespitory")
 	private QuestionDAO questionDAO;
-	
+
 	@Override
-	public void addQuestion(Question question) {	
-		questionDAO.insert(question);
+	public void addQuestion(Question question) {
+		questionDAO.insertQuestion(question);
+		;
 	}
 
 	@Override
@@ -30,13 +31,13 @@ public class SchoolServiceImpl implements SchoolService{
 	}
 
 	@Override
-	public void addAnswer(Answer answer) {		
-		answerDAO.insert(answer);
+	public void addAnswer(Answer answer) {
+		answerDAO.insertAnswer(answer);
 	}
 
 	@Override
 	public Answer findAnswer(long id) {
-		return answerDAO.findById(id);
+		return answerDAO.findByIdAnswer(id);
 	}
 
 	@Override
@@ -44,10 +45,9 @@ public class SchoolServiceImpl implements SchoolService{
 		return questionDAO.findById(id);
 	}
 
-	@Override
-	public double showResults() {		
-		return answerDAO.getSumRate();
-	}
+	// @Override
+	// public double showResults() {
+	// return answerDAO.getSumRate();
+	// }
 
-	
 }
