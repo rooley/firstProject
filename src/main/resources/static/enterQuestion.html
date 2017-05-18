@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first project</title>
+</head>
+<body>
+<h1>Home Page</h1>
+<!--
+    method - указываем какого типа хотим отправить http запрос (post, get)
+    action - указываем по какому url отправить данные
+-->
+<form method="post" action="/addQuestion">
+    <label for="author">Author name:</label>
+    <!--
+        name - указываем имя параметра, по которому получаем данные в контроллере
+        type - типу инпута для ввода текста
+        placeholder - чем заполнить поле, когда значение не введено
+        id - просто идентификатор поля на странице для тега label
+    -->
+    <input type="text" id="message" name="message" placeholder="msg"/>
+    <br/>
+    <br/>
+    <label for="text">Message text:</label>
+    <!--
+        name - указываем имя параметра, по которому получаем данные в контроллере
+        type - типу инпута для ввода текста
+        placeholder - чем заполнить поле, когда значение не введено
+        id - просто идентификатор поля на странице для тега label
+    -->
+    <input type="text" id="rate" name="rate" placeholder="rate"/>
+    <br/>
+    <br/>
+    <!--
+        value - надпись на кнопке
+        type - типу инпута кнопка для отправки формы
+    -->
+    <input type="submit" value="send"/>
+</form>
+</body>
+</html>
