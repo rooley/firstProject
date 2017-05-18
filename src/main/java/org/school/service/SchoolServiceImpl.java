@@ -42,9 +42,9 @@ public class SchoolServiceImpl implements SchoolService {
 		return questionDAO.findById(id);
 	}
 
-	@Override
-	public double showResults() {
-		return answerDAO.getSumRate();
-	}
+	// @Override
+	// public double showResults() {
+	// return answerDAO.getSumRate();
+	// }
 
 }
