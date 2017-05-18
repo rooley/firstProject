@@ -12,7 +12,7 @@ public class ConnectDB {
 
 	private static SqlSessionFactory sqlSessionFactory;
 
-	private void createSqlSession() {
+	private static void createSqlSession() {
 		JdbcDataSource dataSource = new JdbcDataSource();
 		dataSource.setURL("jdbc:h2:˜/test");
 		dataSource.setUser("sa");
