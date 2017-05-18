@@ -15,7 +15,7 @@ public interface SchoolService {
 	
 	public Question findQuestion(long id);
 	
-	public void showResults();
+	public double showResults();
 
 	
 

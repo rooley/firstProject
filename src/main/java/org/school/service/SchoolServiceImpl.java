@@ -42,9 +42,8 @@ public class SchoolServiceImpl implements SchoolService{
 	}
 
 	@Override
-	public void showResults() {
-		
-		
+	public double showResults() {		
+		return answerDAO.getSumRate();
 	}
 
 	
