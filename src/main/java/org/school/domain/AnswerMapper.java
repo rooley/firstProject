@@ -25,5 +25,5 @@ public interface AnswerMapper {
 	List<Answer> getAllAnswer();
 
 	@Insert("INSERT INTO ANSWERS(ANSWER,RATE,QUESTION_ID) VALUES(#{question}, #{rate})")
-	void insertAnswer(Question question);
+	void insertAnswer(Answer answer);
 }

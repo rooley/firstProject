@@ -10,8 +10,9 @@ import org.h2.jdbcx.JdbcDataSource;
 
 public class ConnectDB {
 
-	private  static SqlSessionFactory sqlSessionFactory;
-	private void () {
+	private static SqlSessionFactory sqlSessionFactory;
+
+	private void createSqlSession() {
 		JdbcDataSource dataSource = new JdbcDataSource();
 		dataSource.setURL("jdbc:h2:˜/test");
 		dataSource.setUser("sa");
@@ -19,12 +20,13 @@ public class ConnectDB {
 		TransactionFactory transactionFactory = new JdbcTransactionFactory();
 		Environment environment = new Environment("FirstProgect", transactionFactory, dataSource);
 		Configuration configuration = new Configuration(environment);
-		// configuration.addMapper(BlogMapper.class);
+		configuration.addMapper(QuestionMapper.class);
+		configuration.addMapper(AnswerMapper.class);
 		sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);
 
 	}
-	
-	public static SqlSessionFactory getsqlSessionFactory (){
+
+	public static SqlSessionFactory getsqlSessionFactory() {
 		return sqlSessionFactory;
 	}
 

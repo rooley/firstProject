@@ -12,6 +12,4 @@ public interface QuestionDAO {
 
 	public List<Question> getAllQuestion();
 
-	public void setMaxRate(double maxRate);
-
 }
