@@ -7,22 +7,12 @@ import org.school.domain.ConnectDB;
 import org.school.domain.Question;
 import org.school.domain.QuestionMapper;
 
+@org.springframework.stereotype.Repository("questionRespitory")
 public class QuestionDAOImpl implements QuestionDAO {
 
 	@Override
 	public void insertQuestion(Question question) {
-<<<<<<< HEAD
 		SqlSession session = ConnectDB.createSqlSession().openSession();
-=======
-		
-		//Слетает, т.к. не создан ConnectDB.sqlSessionFactory = null -> NullPointerException;
-		//
-		//Даже если создать sqlSessionFactory через createSqlSession(), то вылетает ошибка:
-		//org.apache.ibatis.builder.IncompleteElementException: Could not find result map org.school.domain.QuestionMapper.answermap
-		//
-		
-		SqlSession session = ConnectDB.getSqlSessionFactory().openSession();
->>>>>>> branch 'working' of https://github.com/rooley/firstProject.git
 		QuestionMapper mapper = session.getMapper(QuestionMapper.class);
 		mapper.insertQuestion(question);
 		session.commit();
