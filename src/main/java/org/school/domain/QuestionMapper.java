@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 
 public interface QuestionMapper {
-	@Results(id = "qustionmap", value = { @Result(property = "id", column = "ID"),
+	@Results(id = "questionmap", value = { @Result(property = "id", column = "ID"),
 			@Result(property = "Question", column = "QUESTION"), @Result(property = "maxRate", column = "MAXRATE") })
 	@Select("SELECT * from QUESTIONS WHERE ID = #{id}")
 	Question findByIdQuestion(@Param("id") long id);
