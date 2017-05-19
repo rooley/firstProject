@@ -10,16 +10,18 @@ import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 
 public interface QuestionMapper {
-	@Results(id = "questionmap", value = { @Result(property = "id", column = "ID"),
-			@Result(property = "Question", column = "QUESTION"), @Result(property = "maxRate", column = "MAXRATE") })
+
+	@Results(id = "qustionmap", value = { @Result(property = "id", column = "ID"),
+			@Result(property = "question", column = "QUESTION"), @Result(property = "maxRate", column = "MAXRATE") })
+
 	@Select("SELECT * from QUESTIONS WHERE ID = #{id}")
 	Question findByIdQuestion(@Param("id") long id);
 
-	@ResultMap("answermap")
+	@ResultMap("qustionmap")
 	@Select("SELECT * from QUESTIONS")
 	List<Question> getAllQuestion();
 
-	@Insert("INSERT INTO QUESTIONS(QUESTION,MAXRATE) VALUES(#{Question}, #{maxRate})")
+	@Insert("INSERT INTO QUESTIONS(QUESTION,MAXRATE) VALUES(#{question}, #{maxRate})")
 	void insertQuestion(Question question);
 
 }

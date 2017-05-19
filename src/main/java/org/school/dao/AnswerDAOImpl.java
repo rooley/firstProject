@@ -13,7 +13,7 @@ public class AnswerDAOImpl implements AnswerDAO {
 
 	@Override
 	public Answer findByIdAnswer(long id) {
-		SqlSession session = ConnectDB.getSqlSessionFactory().openSession();
+		SqlSession session = ConnectDB.createSqlSession().openSession();
 		AnswerMapper mapper = session.getMapper(AnswerMapper.class);
 		Answer answer = mapper.findByIdAnswer(id);
 		session.close();
@@ -23,7 +23,7 @@ public class AnswerDAOImpl implements AnswerDAO {
 
 	@Override
 	public Answer findByIdQuestionInAnswer(long questionId) {
-		SqlSession session = ConnectDB.getSqlSessionFactory().openSession();
+		SqlSession session = ConnectDB.createSqlSession().openSession();
 		AnswerMapper mapper = session.getMapper(AnswerMapper.class);
 		Answer answer = mapper.findByIdQuestionInAnswer(questionId);
 		session.close();
@@ -32,7 +32,7 @@ public class AnswerDAOImpl implements AnswerDAO {
 
 	@Override
 	public List<Answer> getAllAnswer() {
-		SqlSession session = ConnectDB.getSqlSessionFactory().openSession();
+		SqlSession session = ConnectDB.createSqlSession().openSession();
 		AnswerMapper mapper = session.getMapper(AnswerMapper.class);
 		List<Answer> answer = mapper.getAllAnswer();
 		session.close();
@@ -41,7 +41,7 @@ public class AnswerDAOImpl implements AnswerDAO {
 
 	@Override
 	public void insertAnswer(Answer answer) {
-		SqlSession session = ConnectDB.getSqlSessionFactory().openSession();
+		SqlSession session = ConnectDB.createSqlSession().openSession();
 		AnswerMapper mapper = session.getMapper(AnswerMapper.class);
 		mapper.insertAnswer(answer);
 		session.commit();
@@ -51,7 +51,7 @@ public class AnswerDAOImpl implements AnswerDAO {
 
 	@Override
 	public void setRate(long id, double rate) {
-		SqlSession session = ConnectDB.getSqlSessionFactory().openSession();
+		SqlSession session = ConnectDB.createSqlSession().openSession();
 		AnswerMapper mapper = session.getMapper(AnswerMapper.class);
 		mapper.setRate(id, rate);
 		session.commit();
