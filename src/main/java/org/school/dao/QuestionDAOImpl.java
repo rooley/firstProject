@@ -11,7 +11,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 
 	@Override
 	public void insertQuestion(Question question) {
-		SqlSession session = ConnectDB.getSqlSessionFactory().openSession();
+		SqlSession session = ConnectDB.createSqlSession().openSession();
 		QuestionMapper mapper = session.getMapper(QuestionMapper.class);
 		mapper.insertQuestion(question);
 		session.commit();
@@ -21,7 +21,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 
 	@Override
 	public Question findById(long id) {
-		SqlSession session = ConnectDB.getSqlSessionFactory().openSession();
+		SqlSession session = ConnectDB.createSqlSession().openSession();
 		QuestionMapper mapper = session.getMapper(QuestionMapper.class);
 		Question question = mapper.findByIdQuestion(id);
 		session.close();
@@ -30,7 +30,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 
 	@Override
 	public List<Question> getAllQuestion() {
-		SqlSession session = ConnectDB.getSqlSessionFactory().openSession();
+		SqlSession session = ConnectDB.createSqlSession().openSession();
 		QuestionMapper mapper = session.getMapper(QuestionMapper.class);
 		List<Question> question = mapper.getAllQuestion();
 		session.close();
