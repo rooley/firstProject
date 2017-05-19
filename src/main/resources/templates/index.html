@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>First Project: HelloPage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h2>Школа JAVA</h2>
+    <div>
+        <form action="#" th:action="@{/teacher}" method="get">
+            <p><input type="submit" value="Преподаватель" /></p>
+        </form>
+        <form action="#" th:action="@{/student}" method="get">
+            <p><input type="submit" value="Учитель" /></p>
+        </form>
+    </div>
+</body>
+</html>

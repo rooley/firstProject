@@ -4,16 +4,16 @@ package org.school.domain;
  * Created by Andrey on 16.05.2017.
  */
 public class Question {
-    private String question;
+    private String message;
     private long id;
     private double maxRate;
 
-    public String getQuestion() {
-        return question;
+    public String getMessage() {
+        return message;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public long getId() {
