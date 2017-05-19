@@ -7,7 +7,9 @@ import org.school.domain.Answer;
 import org.school.domain.AnswerMapper;
 import org.school.domain.ConnectDB;
 
+@org.springframework.stereotype.Repository("answerRespitory")
 public class AnswerDAOImpl implements AnswerDAO {
+
 
 	@Override
 	public Answer findByIdAnswer(long id) {

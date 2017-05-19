@@ -11,6 +11,11 @@ import org.h2.jdbcx.JdbcDataSource;
 public class ConnectDB {
 
 	public static SqlSessionFactory createSqlSession() {
+=======
+	private static SqlSessionFactory sqlSessionFactory;
+
+	private static void createSqlSession() {
+>>>>>>> branch 'working' of https://github.com/rooley/firstProject.git
 		JdbcDataSource dataSource = new JdbcDataSource();
 		dataSource.setURL("jdbc:h2:~/h2dbfirstproject/test");
 		dataSource.setUser("sa");

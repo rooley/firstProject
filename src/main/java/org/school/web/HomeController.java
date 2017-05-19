@@ -13,4 +13,14 @@ public class HomeController {
     public String home() {
         return "index.html";
     }
+    
+    @RequestMapping(value ="/teacher", method = RequestMethod.GET)
+    public String goTeacher() {
+    	return "enterQuestion.html";
+    }
+    
+    @RequestMapping(value ="/student", method = RequestMethod.GET)
+    public String goStudent() {
+    	return "enterAnswer.html";
+    }
 }
