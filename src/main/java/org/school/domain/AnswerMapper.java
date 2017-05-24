@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.Update;
 
 public interface AnswerMapper {
 	@Results(id = "answermap", value = { @Result(property = "id", column = "ID"),
-			@Result(property = "answer", column = "ANSWER"), @Result(property = "rate", column = "RATE"),
+			@Result(property = "message", column = "ANSWER"), @Result(property = "rate", column = "RATE"),
 			@Result(property = "questionId", column = "QUESTION_ID"), })
 	@Select("SELECT * from ANSWERS WHERE ID = #{id}")
 	Answer findByIdAnswer(@Param("id") long id);
@@ -25,7 +25,7 @@ public interface AnswerMapper {
 	@Select("SELECT * FROM ANSWERS")
 	List<Answer> getAllAnswer();
 
-	@Insert("INSERT INTO ANSWERS(ANSWER,QUESTION_ID) VALUES(#{ansvwer}, #{questionId})")
+	@Insert("INSERT INTO ANSWERS(ANSWER,QUESTION_ID) VALUES(#{message}, #{questionId})")
 	void insertAnswer(Answer answer);
 
 	@Update("UPDATE ANSWERS SET RATE=#{rate}, WHERE ID =#{id}")

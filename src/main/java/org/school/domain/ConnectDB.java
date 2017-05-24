@@ -12,7 +12,7 @@ public class ConnectDB {
 
 	public static SqlSessionFactory createSqlSession() {
 		JdbcDataSource dataSource = new JdbcDataSource();
-		dataSource.setURL("jdbc:h2:~/h2dbfirstproject/test");
+		dataSource.setURL("jdbc:h2:./h2dbfirstproject/test");
 		dataSource.setUser("sa");
 		TransactionFactory transactionFactory = new JdbcTransactionFactory();
 		Environment environment = new Environment("FirstProgect", transactionFactory, dataSource);

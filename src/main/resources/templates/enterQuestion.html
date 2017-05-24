@@ -8,8 +8,8 @@
     <h1>Введите вопрос №<label th:text="${currentIndex}"> </label></h1>
 
     <form action="#" th:action="@{/enterQuestion}" th:object="${question}" method="post">
-        <p>Question: <textarea th:field="*{message}" rows="5" cols="60" required="required"></textarea></p>
-        <p>MaxRate: <input type="text" th:field="*{maxRate}" required="required"/></p>
+        <p>Question: <textarea  th:field="*{message}" rows="5" cols="60" required="required" placeholder="Введите вопрос"></textarea></p>
+        <p>MaxRate: <input value="" type="text" th:field="*{maxRate}" required="required" placeholder="0"/></p>
         <p><input type="submit" value="Отправить" /> <input type="reset" value="Сбросить" /></p>
     </form>
 </body>
